@@ -1,0 +1,53 @@
+.diagram {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  .pie_chart {
+    margin-bottom: 20px;
+  }
+
+  .list {
+    max-width: 160px;
+    width: 100%;
+    margin: -100px auto 0 auto;
+
+    .row {
+      position: relative;
+      margin: 0 0 5px 6px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all .3s linear;
+      border-bottom: 1px solid transparent;
+      z-index: 1;
+
+      .label, .value {
+        color: grey;
+        font-size: 16px;
+        transition: all .3s linear;
+      }
+
+      &:hover, &.active {
+        border-color: darkviolet;
+
+        .label, .value {
+          font-weight: 500;
+          color: darkviolet;
+        }
+      }
+    }
+  }
+  .text_label {
+    font-size: 16px;
+    font-weight: 500;
+    fill: black;
+  }
+  .text_value {
+    font-size: 34px;
+    font-weight: 500;
+    fill: rgb(248,127,0)
+  }
+}
