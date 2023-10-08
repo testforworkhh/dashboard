@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRouter/PrivateRoute";
 import { privateRoutes } from "./routes/privateRoutes";
 import { routes } from "./routes/routes";
 
 function App() {
     const location = useLocation();
+    const navigate = useNavigate();
     const [auth, setAuth] = useState<boolean>(false);
 
     useEffect(() => {
         if (localStorage.getItem("token"))
             setAuth(true);
+        if (location.pathname === "/")
+            navigate("/login")
     }, [location]);
     return (
         <div className="app">
